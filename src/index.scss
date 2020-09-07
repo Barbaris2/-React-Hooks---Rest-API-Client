@@ -19,3 +19,33 @@ code {
   margin: 0;
   padding: 0;
 }
+
+#root > nav > div > a:hover {
+  color: gold;
+  transform: scale(1.2);
+  transition: 1s;
+}
+
+#root > nav > div > a:not(:hover) {
+  transition: 1s;
+}
+
+.custom-select {
+  max-width: 110px;
+}
+
+.invalid-feedback {
+  position: absolute;
+  top: 40px;
+  left: 5px;
+}
+
+.input-group {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  min-width: 430px;
+}

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { validation } from '../services/validator';
 
 const Input = props => {

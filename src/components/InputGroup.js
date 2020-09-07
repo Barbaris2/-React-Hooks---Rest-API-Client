@@ -7,10 +7,9 @@ import Button from '../UI/Button';
 
 const InputGroup = () => {
   const { URL, setURL } = useContext(ApiContext);
+  const { method, setMethod } = useContext(ApiContext);
 
   const [touched, setTouched] = useState('');
-
-  const [method, setMethod] = useState('get');
 
   const onChangeInput = value => {
     let URL = value.trim().toLowerCase();
@@ -28,7 +27,6 @@ const InputGroup = () => {
         }
 
         const data = await response.json();
-        // show('Success', 'success');
         return { response, data };
       };
 
@@ -45,7 +43,7 @@ const InputGroup = () => {
       <div className='input-group '>
         <Input
           value={URL}
-          // touched={touched}
+          touched={touched}
           placeholder='Введите URL'
           validType={{ required: true, URL: true }}
           onChange={e => onChangeInput(e.target.value)}
