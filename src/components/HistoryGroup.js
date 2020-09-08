@@ -17,6 +17,7 @@ const HistoryGroup = () => {
   const clearHistory = () => {
     setHistory([]);
     localStorage.removeItem('history');
+    show('History was cleare!');
   };
 
   const repeatHandler = async id => {

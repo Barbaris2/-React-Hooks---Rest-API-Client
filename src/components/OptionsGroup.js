@@ -73,7 +73,7 @@ const OptionsGroup = () => {
             <b>{key}</b> : {value}
           </p>
           <i
-            className='fa fa-minus'
+            className='far fa-trash-alt'
             onClick={() => onDeleteHandler(key, name)}
           ></i>
         </div>
