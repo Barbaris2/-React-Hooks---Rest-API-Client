@@ -15,6 +15,10 @@ export const ApiState = ({ children }) => {
   const [apiResponse, setApiResponse] = useState();
   const [apiData, setApiData] = useState();
 
+  const ls = localStorage.getItem('history') || [];
+
+  const [history, setHistory] = useState(JSON.parse(ls));
+
   return (
     <ApiContext.Provider
       value={{
@@ -29,7 +33,9 @@ export const ApiState = ({ children }) => {
         apiResponse,
         setApiResponse,
         apiData,
-        setApiData
+        setApiData,
+        history,
+        setHistory
       }}
     >
       {children}

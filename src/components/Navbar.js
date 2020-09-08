@@ -11,12 +11,17 @@ export const Navbar = () => (
     <ul className='navbar-nav'>
       <li className='nav-item'>
         <NavLink exact to='/' className='nav-link'>
-          Main
+          MAIN
+        </NavLink>
+      </li>
+      <li className='nav-item'>
+        <NavLink to='/history' className='nav-link'>
+          HISTORY
         </NavLink>
       </li>
       <li className='nav-item'>
         <NavLink to='/about' className='nav-link'>
-          About
+          ABOUT
         </NavLink>
       </li>
     </ul>

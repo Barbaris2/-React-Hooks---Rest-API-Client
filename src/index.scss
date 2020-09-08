@@ -105,3 +105,79 @@ code {
   margin-left: auto;
   margin-top: 2rem;
 }
+
+.history-container {
+  max-width: 660px;
+}
+
+.history-group {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.d-flex.history-item {
+  color: black;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.history-get {
+  color: blue;
+  margin-left: 20px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: bold;
+  font-size: large;
+}
+
+.history-status {
+  margin-left: 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.history-url {
+  margin-left: 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.history-info {
+  margin-left: 20px;
+  color: blue;
+  font-size: large;
+}
+
+.history-info i:hover {
+  transform: scale(1.5);
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.history-info i:not(:hover) {
+  transition: 1s;
+}
+
+.history-repeat {
+  color: green;
+  margin-left: 20px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: bold;
+  font-size: large;
+}
+
+.history-repeat i:hover {
+  transform: scale(1.5);
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.history-repeat i:not(:hover) {
+  transition: 1s;
+}
+
+.btn-clear-history {
+  float: right;
+  margin-top: 15px;
+}

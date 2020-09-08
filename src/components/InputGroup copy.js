@@ -15,7 +15,6 @@ const InputGroup = () => {
   const { apiBody, apiHeaders } = useContext(ApiContext);
   const { setApiResponse } = useContext(ApiContext);
   const { setApiData } = useContext(ApiContext);
-  const { history, setHistory } = useContext(ApiContext);
   const [touched, setTouched] = useState('');
 
   const onChangeInput = value => {
@@ -28,27 +27,28 @@ const InputGroup = () => {
     const request = { URL, method, apiBody, apiHeaders };
     try {
       const result = await fetchResponse(request);
-
-      if (result.response.ok) {
-        show(`Success! Status: ${result.response.status}`, 'success');
-      } else {
-        show(`Error! Status: ${result.response.status}`, 'danger');
-      }
-
-      setApiResponse(result.response);
-      setApiData(result.data);
-
-      const historyItem = {
-        id: Math.floor(Math.random() * 1000000),
-        request,
-        response: result.response,
-        responseData: result.data
-      };
-      const _history = history;
-      _history.push(historyItem);
-      setHistory(_history);
-
-      localStorage.setItem('history', JSON.stringify(history));
+      // const fetchResponse = async URL => {
+      //   const response = await fetch(URL, {
+      //     method,
+      //     body: method !== 'get' ? JSON.stringify(apiBody) : undefined,
+      //     headers: apiHeaders
+      //   });
+      //   if (!response.ok) {
+      //     console.log('Ошибка ответа:', response.status);
+      //     show(`Error! Status: ${response.status}`, 'danger');
+      //   } else {
+      //     show(`Success! Status: ${response.status}`, 'success');
+      //   }
+      //   const data = await response.json();
+      //   const result = { response, data };
+      //   return result;
+      // };
+      // const result = await fetchResponse(URL);
+      // setApiResponse(result.response);
+      // setApiData(result.data);
+      // console.log(result.response);
+      // console.log(result.data);
+      console.log(result);
     } catch (error) {
       console.log('Возникла проблема с запросом', error);
       show(`Error! Status: ${error}`, 'danger');
