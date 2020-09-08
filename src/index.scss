@@ -76,3 +76,32 @@ code {
   margin-left: 10px;
   cursor: pointer;
 }
+
+.response-group {
+  max-width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1.2rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.response-group h6 {
+  margin-left: 16px;
+}
+
+.overflow-auto {
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 80px;
+  max-height: 300px;
+  margin-bottom: 10px;
+}
+
+.alert {
+  max-width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2rem;
+}

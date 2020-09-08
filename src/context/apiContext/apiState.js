@@ -3,13 +3,17 @@ import { ApiContext } from './apiContext';
 
 export const ApiState = ({ children }) => {
   const [URL, setURL] = useState(
-    'https://jsonplaceholder.typicode.com/posts/1'
+    'https://jsonplaceholder.typicode.com/users/1/albums'
   );
   const [method, setMethod] = useState('get');
   const [apiHeaders, setApiHeaders] = useState({
     'Content-type': 'application/json'
   });
+
   const [apiBody, setApiBody] = useState({});
+
+  const [apiResponse, setApiResponse] = useState();
+  const [apiData, setApiData] = useState();
 
   return (
     <ApiContext.Provider
@@ -21,7 +25,11 @@ export const ApiState = ({ children }) => {
         apiHeaders,
         setApiHeaders,
         apiBody,
-        setApiBody
+        setApiBody,
+        apiResponse,
+        setApiResponse,
+        apiData,
+        setApiData
       }}
     >
       {children}
