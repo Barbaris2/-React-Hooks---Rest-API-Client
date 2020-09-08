@@ -7,7 +7,7 @@ import Select from '../UI/Select';
 import Button from '../UI/Button';
 
 const InputGroup = () => {
-  const { show, hide } = useContext(AlertContext);
+  const { show } = useContext(AlertContext);
   const { URL, setURL } = useContext(ApiContext);
   const { method, setMethod } = useContext(ApiContext);
   const { apiBody, apiHeaders } = useContext(ApiContext);
