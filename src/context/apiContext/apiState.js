@@ -23,8 +23,6 @@ export const ApiState = ({ children }) => {
     ls = JSON.parse(ls);
   }
 
-  console.log(ls);
-
   const [history, setHistory] = useState(ls);
 
   return (

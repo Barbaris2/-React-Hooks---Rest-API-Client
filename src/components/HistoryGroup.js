@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import Button from '../UI/Button';
 import { ApiContext } from '../context/apiContext/apiContext';
+import { AlertContext } from '../context/alert/alertContext';
+import { fetchResponse } from '../services/fetchAPI';
 
 const HistoryGroup = () => {
   const { history, setHistory } = useContext(ApiContext);
+  const { show } = useContext(AlertContext);
 
   history.map(item => {
     const { id, request, response, responseData } = item;
@@ -17,25 +20,25 @@ const HistoryGroup = () => {
   };
 
   const repeatHandler = async id => {
-    console.log(id);
     const historyItem = history.filter(item => {
       return item.id === id;
     });
-    console.log(historyItem);
-    // const request = { URL, method, apiBody, apiHeaders };
-    // try {
-    //   const result = await fetchResponse(request);
 
-    //   if (result.response.ok) {
-    //     show(`Success! Status: ${result.response.status}`, 'success');
-    //   } else {
-    //     show(`Error! Status: ${result.response.status}`, 'danger');
-    //   }
+    const { URL, method, apiBody, apiHeaders } = historyItem[0].request;
 
-    // } catch (error) {
-    //   console.log('Возникла проблема с запросом', error);
-    //   show(`Error! Status: ${error}`, 'danger');
-    // }
+    const request = { URL, method, apiBody, apiHeaders };
+    try {
+      const result = await fetchResponse(request);
+
+      if (result.response.ok) {
+        show(`Success! Status: ${result.response.status}`, 'success');
+      } else {
+        show(`Error! Status: ${result.response.status}`, 'danger');
+      }
+    } catch (error) {
+      console.log('Возникла проблема с запросом', error);
+      show(`Error! Status: ${error}`, 'danger');
+    }
   };
 
   function renderListHistory(history) {
