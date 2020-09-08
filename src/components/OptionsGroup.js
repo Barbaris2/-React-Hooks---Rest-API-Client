@@ -47,7 +47,19 @@ const OptionsGroup = () => {
   };
 
   const onDeleteHandler = (key, name) => {
-    console.log(key, name);
+    if (name === 'apiHeadersBtn') {
+      const headers = apiHeaders;
+      delete headers[key];
+      setApiHeaders(headers);
+      const list = renderListHeaders(apiHeaders, name);
+      setListHeaders(list);
+    } else if (name === 'apiBodyBtn') {
+      const body = apiBody;
+      delete body[key];
+      setApiBody(body);
+      const list = renderListHeaders(apiBody, name);
+      setListBody(list);
+    }
   };
 
   function renderListHeaders(obj, name) {
@@ -57,7 +69,7 @@ const OptionsGroup = () => {
       return (
         <div className='d-flex' key={index}>
           <p>{index + 1}. </p> &nbsp;
-          <p key={index}>
+          <p>
             <b>{key}</b> : {value}
           </p>
           <i

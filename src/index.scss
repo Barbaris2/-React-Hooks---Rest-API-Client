@@ -49,3 +49,30 @@ code {
 .container {
   min-width: 430px;
 }
+
+.tab-group {
+  max-width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  // border: 1px solid #f8f9fa;
+  // border-radius: 4px;
+}
+
+.tab-content {
+  border-bottom: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+}
+
+.headers-group {
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.fa-minus {
+  color: red;
+  font-size: 26px;
+  margin-left: 10px;
+  cursor: pointer;
+}

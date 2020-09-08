@@ -7,7 +7,7 @@ export const ApiState = ({ children }) => {
   const [apiHeaders, setApiHeaders] = useState({
     'Content-type': 'application/json'
   });
-  const [apiBody, setApiBody] = useState();
+  const [apiBody, setApiBody] = useState({});
 
   return (
     <ApiContext.Provider
