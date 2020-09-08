@@ -48,8 +48,8 @@ const InputGroup = () => {
       setApiResponse(result.response);
       setApiData(result.data);
 
-      console.log(result.response);
-      console.log(result.data);
+      // console.log(result.response);
+      // console.log(result.data);
     } catch (error) {
       console.log('Возникла проблема с запросом', error);
       show(`Error! Status: ${error}`, 'danger');
