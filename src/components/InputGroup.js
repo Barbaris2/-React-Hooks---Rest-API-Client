@@ -8,6 +8,7 @@ import Button from '../UI/Button';
 const InputGroup = () => {
   const { URL, setURL } = useContext(ApiContext);
   const { method, setMethod } = useContext(ApiContext);
+  const { apiBody, apiHeaders } = useContext(ApiContext);
 
   const [touched, setTouched] = useState('');
 
@@ -20,7 +21,11 @@ const InputGroup = () => {
   const onSubmit = async () => {
     try {
       const fetchResponse = async URL => {
-        const response = await fetch(URL);
+        const response = await fetch(URL, {
+          method,
+          body: method !== 'get' ? JSON.stringify(apiBody) : undefined,
+          headers: apiHeaders
+        });
 
         if (!response.ok) {
           console.log('Ошибка ответа:', response.status);

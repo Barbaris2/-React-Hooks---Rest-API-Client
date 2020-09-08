@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { ApiContext } from './apiContext';
 
 export const ApiState = ({ children }) => {
-  const [URL, setURL] = useState('');
+  const [URL, setURL] = useState(
+    'https://jsonplaceholder.typicode.com/posts/1'
+  );
   const [method, setMethod] = useState('get');
   const [apiHeaders, setApiHeaders] = useState({
     'Content-type': 'application/json'
