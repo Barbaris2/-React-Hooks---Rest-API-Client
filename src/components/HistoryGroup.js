@@ -11,6 +11,11 @@ const HistoryGroup = () => {
 
   const listHistory = renderListHistory(history);
 
+  const clearHistory = () => {
+    setHistory([]);
+    localStorage.removeItem('history');
+  };
+
   const repeatHandler = async id => {
     console.log(id);
     const historyItem = history.filter(item => {
@@ -67,7 +72,7 @@ const HistoryGroup = () => {
         <Button
           type='button'
           className='btn btn-outline-secondary'
-          onClick={() => setHistory([])}
+          onClick={() => clearHistory()}
         >
           Clear history
         </Button>

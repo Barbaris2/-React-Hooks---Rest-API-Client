@@ -15,9 +15,15 @@ export const ApiState = ({ children }) => {
   const [apiResponse, setApiResponse] = useState();
   const [apiData, setApiData] = useState();
 
-  const ls = localStorage.getItem('history') || [];
+  let ls = localStorage.getItem('history');
 
-  const [history, setHistory] = useState(JSON.parse(ls));
+  if (ls === null) {
+    ls = [];
+  }
+
+  console.log(ls);
+
+  const [history, setHistory] = useState(ls);
 
   return (
     <ApiContext.Provider
