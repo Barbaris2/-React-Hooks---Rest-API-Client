@@ -19,6 +19,8 @@ export const ApiState = ({ children }) => {
 
   if (ls === null) {
     ls = [];
+  } else {
+    ls = JSON.parse(ls);
   }
 
   console.log(ls);
