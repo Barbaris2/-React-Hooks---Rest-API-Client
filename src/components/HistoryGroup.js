@@ -52,14 +52,14 @@ const HistoryGroup = () => {
 
   function renderListHistory(history) {
     return history.map((item, index) => {
-      const { id, request, response, responseData } = item;
+      const { id, request, status, responseData } = item;
       return (
         <div className='d-flex history-item' key={id}>
           <p>{index + 1}</p>
           <div className='history-get'>{request.method}</div>{' '}
           <div className='history-status d-flex'>
             <p>
-              <strong>Status:</strong> {response.status}
+              <strong>Status:</strong> {status}
             </p>
           </div>
           <div className='history-url'>
@@ -88,6 +88,21 @@ const HistoryGroup = () => {
         >
           Clear history
         </Button>
+      </div>
+      <div className='history-request-group' style={{ marginTop: '60px' }}>
+        <h6 style={{ marginTop: '10px' }}>Information about request №:</h6>
+        <div className='response-headers'>
+          <h6 style={{ marginTop: '10px' }}>Response data:</h6>
+          <div className='overflow-auto bg-light'>
+            {/* <pre>{JSON.stringify(apiResponseHeaders, null, 2)}</pre> */}
+          </div>
+        </div>
+        <div className='response-data'>
+          <h6>Response data:</h6>
+          <div className='overflow-auto bg-light'>
+            {/* <pre>{JSON.stringify(apiData, null, 2)}</pre> */}
+          </div>
+        </div>
       </div>
     </div>
   );

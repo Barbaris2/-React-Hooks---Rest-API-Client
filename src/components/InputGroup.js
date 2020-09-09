@@ -39,6 +39,8 @@ const InputGroup = () => {
       setApiResponse(result.response);
       setApiData(result.data);
 
+      console.log(result.response.status);
+
       const responseHeaders = {};
       result.response.headers.forEach((value, name) => {
         responseHeaders[name] = value;
@@ -49,7 +51,7 @@ const InputGroup = () => {
       const historyItem = {
         id: Math.floor(Math.random() * 1000000),
         request,
-        response: result.response,
+        status: result.response.status,
         responseData: result.data,
         responseHeaders
       };

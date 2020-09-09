@@ -6,7 +6,7 @@ const ResponseGroup = () => {
   return (
     <div className='response-group'>
       <div className='response-headers'>
-        <h6 style={{ marginTop: '10px' }}>Response data:</h6>
+        <h6 style={{ marginTop: '10px' }}>Response headers:</h6>
         <div className='overflow-auto bg-light'>
           <pre>{JSON.stringify(apiResponseHeaders, null, 2)}</pre>
         </div>
