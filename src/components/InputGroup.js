@@ -49,12 +49,18 @@ const InputGroup = () => {
       setApiResponseHeaders(responseHeaders);
 
       const historyItem = {
-        id: Math.floor(Math.random() * 1000000),
-        request,
+        URL,
+        id: Math.floor(Math.random() * 1000),
+        method,
+        requestBody: Object.assign({}, apiBody),
+        requestHeaders: Object.assign({}, apiHeaders),
         status: result.response.status,
         responseData: result.data,
         responseHeaders
       };
+
+      console.log(historyItem);
+
       const _history = history;
       _history.push(historyItem);
       setHistory(_history);
