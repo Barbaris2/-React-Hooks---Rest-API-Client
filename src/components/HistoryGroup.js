@@ -15,7 +15,7 @@ const HistoryGroup = () => {
     setHistory([]);
     setInfo({});
     localStorage.removeItem('history');
-    show('History was cleare!');
+    show('History was cleared!');
   };
 
   const infoHandler = id => {
@@ -78,7 +78,7 @@ const HistoryGroup = () => {
     });
   }
   return (
-    <div className='history-container'>
+    <div className='history-group'>
       {listHistory}{' '}
       <div className='btn-clear-history col'>
         <Button

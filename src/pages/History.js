@@ -5,7 +5,7 @@ import { ApiContext } from '../context/apiContext/apiContext';
 export const History = () => {
   const { history } = useContext(ApiContext);
   return (
-    <div className='history-group'>
+    <div className='history-container'>
       {history[0] === undefined ? (
         <p className='history-empty'>History Empty</p>
       ) : (
