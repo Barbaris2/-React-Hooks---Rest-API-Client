@@ -16,7 +16,7 @@ const InputGroup = () => {
   const { setApiResponse } = useContext(ApiContext);
   const { setApiData } = useContext(ApiContext);
   const { history, setHistory } = useContext(ApiContext);
-  const { apiResponseHeaders, setApiResponseHeaders } = useContext(ApiContext);
+  const { setApiResponseHeaders } = useContext(ApiContext);
   const [touched, setTouched] = useState('');
 
   const onChangeInput = value => {
