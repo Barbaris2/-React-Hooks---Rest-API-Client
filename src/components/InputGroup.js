@@ -21,7 +21,8 @@ const InputGroup = () => {
     setApiData,
     history,
     setHistory,
-    setApiResponseHeaders
+    setApiResponseHeaders,
+    setLoading
   } = useContext(ApiContext);
 
   const [touched, setTouched] = useState('');
@@ -34,13 +35,17 @@ const InputGroup = () => {
 
   const onSubmit = async () => {
     const request = { URL, method, apiBody, apiHeaders };
+
     try {
+      setLoading(true);
       const result = await fetchResponse(request);
 
       if (result.response.ok) {
         show(`Success! Status: ${result.response.status}`, 'success');
+        setLoading(false);
       } else {
         show(`Error! Status: ${result.response.status}`, 'danger');
+        setLoading(false);
       }
 
       setApiResponse(result.response);

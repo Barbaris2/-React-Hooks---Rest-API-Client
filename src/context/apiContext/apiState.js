@@ -15,6 +15,7 @@ export const ApiState = ({ children }) => {
   const [apiResponseHeaders, setApiResponseHeaders] = useState();
   const [apiResponse, setApiResponse] = useState();
   const [apiData, setApiData] = useState();
+  const [loading, setLoading] = useState(false);
 
   let ls = localStorage.getItem('history');
 
@@ -44,7 +45,9 @@ export const ApiState = ({ children }) => {
         history,
         setHistory,
         apiResponseHeaders,
-        setApiResponseHeaders
+        setApiResponseHeaders,
+        loading,
+        setLoading
       }}
     >
       {children}
