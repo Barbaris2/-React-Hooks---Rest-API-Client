@@ -12,6 +12,7 @@ export const ApiState = ({ children }) => {
 
   const [apiBody, setApiBody] = useState({});
 
+  const [apiResponseHeaders, setApiResponseHeaders] = useState();
   const [apiResponse, setApiResponse] = useState();
   const [apiData, setApiData] = useState();
 
@@ -41,7 +42,9 @@ export const ApiState = ({ children }) => {
         apiData,
         setApiData,
         history,
-        setHistory
+        setHistory,
+        apiResponseHeaders,
+        setApiResponseHeaders
       }}
     >
       {children}
