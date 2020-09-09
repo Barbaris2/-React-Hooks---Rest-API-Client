@@ -31,9 +31,11 @@ const HistoryGroup = () => {
       return item.id === id;
     });
 
-    const { URL, method, apiBody, apiHeaders } = historyItem[0].request;
+    console.log(historyItem[0]);
 
-    const request = { URL, method, apiBody, apiHeaders };
+    const { URL, method, requestBody, requestHeaders } = historyItem[0];
+
+    const request = { URL, method, requestBody, requestHeaders };
     try {
       const result = await fetchResponse(request);
 
