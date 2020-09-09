@@ -20,14 +20,6 @@ const HistoryGroup = () => {
     show('History was cleare!');
   };
 
-  const infoHandler = id => {
-    const historyItem = history.filter(item => {
-      return item.id === id;
-    });
-
-    console.log(historyItem);
-  };
-
   const repeatHandler = async id => {
     const historyItem = history.filter(item => {
       return item.id === id;
@@ -71,7 +63,7 @@ const HistoryGroup = () => {
             <i className='fas fa-redo' onClick={() => repeatHandler(id)}></i>
           </div>
           <div className='history-info'>
-            <i className='fas fa-info' onClick={() => infoHandler(id)}></i>
+            <i className='fas fa-info'></i>
           </div>
         </div>
       );

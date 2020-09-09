@@ -57,7 +57,7 @@ const InputGroup = () => {
       _history.push(historyItem);
       setHistory(_history);
 
-      localStorage.setItem('history', JSON.stringify(history));
+      localStorage.setItem('history', JSON.stringify(_history));
     } catch (error) {
       console.log('Возникла проблема с запросом', error);
       show(`Error! Status: ${error}`, 'danger');
