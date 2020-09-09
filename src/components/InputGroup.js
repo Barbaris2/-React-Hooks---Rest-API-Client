@@ -16,6 +16,7 @@ const InputGroup = () => {
   const { setApiResponse } = useContext(ApiContext);
   const { setApiData } = useContext(ApiContext);
   const { history, setHistory } = useContext(ApiContext);
+  const { apiResponseHeaders, setApiResponseHeaders } = useContext(ApiContext);
   const [touched, setTouched] = useState('');
 
   const onChangeInput = value => {
@@ -38,11 +39,19 @@ const InputGroup = () => {
       setApiResponse(result.response);
       setApiData(result.data);
 
+      const responseHeaders = {};
+      result.response.headers.forEach((value, name) => {
+        responseHeaders[name] = value;
+      });
+
+      setApiResponseHeaders(responseHeaders);
+
       const historyItem = {
         id: Math.floor(Math.random() * 1000000),
         request,
         response: result.response,
-        responseData: result.data
+        responseData: result.data,
+        responseHeaders
       };
       const _history = history;
       _history.push(historyItem);
