@@ -26,8 +26,6 @@ const HistoryGroup = () => {
     setInfo(historyItem[0]);
   };
 
-  console.log(info);
-
   const repeatHandler = async id => {
     const historyItem = history.filter(item => {
       return item.id === id;
@@ -51,8 +49,8 @@ const HistoryGroup = () => {
   };
 
   function renderListHistory(history) {
-    return history.map((item, index) => {
-      const { id, URL, method, status, responseData } = item;
+    return history.map(item => {
+      const { id, URL, method, status } = item;
       return (
         <div className='d-flex history-item' key={id}>
           <p>ID: {id}</p>

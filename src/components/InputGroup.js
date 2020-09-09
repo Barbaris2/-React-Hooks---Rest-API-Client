@@ -10,13 +10,20 @@ import Button from '../UI/Button';
 
 const InputGroup = () => {
   const { show } = useContext(AlertContext);
-  const { URL, setURL } = useContext(ApiContext);
-  const { method, setMethod } = useContext(ApiContext);
-  const { apiBody, apiHeaders } = useContext(ApiContext);
-  const { setApiResponse } = useContext(ApiContext);
-  const { setApiData } = useContext(ApiContext);
-  const { history, setHistory } = useContext(ApiContext);
-  const { setApiResponseHeaders } = useContext(ApiContext);
+  const {
+    URL,
+    setURL,
+    method,
+    setMethod,
+    apiBody,
+    apiHeaders,
+    setApiResponse,
+    setApiData,
+    history,
+    setHistory,
+    setApiResponseHeaders
+  } = useContext(ApiContext);
+
   const [touched, setTouched] = useState('');
 
   const onChangeInput = value => {
@@ -98,7 +105,6 @@ const InputGroup = () => {
             className={'btn btn-outline-primary'}
             type={'submit'}
             onClick={onSubmit}
-            // disabled={!isValid}
           >
             SEND
           </Button>
